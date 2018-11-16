@@ -870,7 +870,7 @@ public class ReactCache {
         itemMap.putString(MessageConstant.Message.ATTACH_STATUS, Integer.toString(item.getAttachStatus().getValue()));
         itemMap.putString(MessageConstant.Message.IS_REMOTE_READ, boolean2String(receiveReceiptCheck(item)));
 
-        itemMap.putString(MessageConstant.Message.REMOTE_EXTENSION, JSON.toJSONString(item.getRemoteExtension()));
+        itemMap.putMap(MessageConstant.Message.REMOTE_EXTENSION, ReactExtendsion.makeHashMap2WritableMap(item.getRemoteExtension()));
 
         WritableMap user = Arguments.createMap();
         String fromAccount = item.getFromAccount();
