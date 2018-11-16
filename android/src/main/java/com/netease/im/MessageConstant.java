@@ -53,6 +53,7 @@ public class MessageConstant {
         public static final String SESSION_TYPE = "sessionType";
         public static final String SESSION_ID = "sessionId";
 
+        public static final String REMOTE_EXTENSION = "remoteExtension";
 
         public static final String TIME = "time";
     }

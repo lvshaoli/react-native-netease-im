@@ -2,6 +2,7 @@ package com.netease.im;
 
 import android.text.TextUtils;
 
+import com.alibaba.fastjson.JSON;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableArray;
@@ -868,6 +869,8 @@ public class ReactCache {
         itemMap.putString(MessageConstant.Message.STATUS, getMessageStatus(item.getStatus()));
         itemMap.putString(MessageConstant.Message.ATTACH_STATUS, Integer.toString(item.getAttachStatus().getValue()));
         itemMap.putString(MessageConstant.Message.IS_REMOTE_READ, boolean2String(receiveReceiptCheck(item)));
+
+        itemMap.putString(MessageConstant.Message.REMOTE_EXTENSION, JSON.toJSONString(item.getRemoteExtension()));
 
         WritableMap user = Arguments.createMap();
         String fromAccount = item.getFromAccount();
